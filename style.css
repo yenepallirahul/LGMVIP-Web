@@ -1,90 +1,141 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  
-  h1 {
-    font-size: 30px;
-    margin-top: 15px;
+  body {
+    background-image: linear-gradient(120deg, #858582fb 0%, #0c0b0b 100%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
   }
-  
   header {
+    font-size: 2rem;
+    color:#7260ef;
+    font-style: sans-serif;
+  }
+  
+  header,
+  form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form input,
+  form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+  }
+  form button {
+    color: #7260ef;
+    background: #f7fffe;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  form button:hover {
+    background: #7260ef;
+    color: white;
+  }
+  .todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .todo-list {
+    min-width: 30%;
+    list-style: none;
+  }
+  
+  .todo {
+    margin: 0.5rem;
+    background: white;
+    font-size: 1.5rem;
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10%;
-    background-color: #5eefe2;
+    transition: all 1s ease;
+  }
+  .filter-todo {
+    padding: 1rem;
+  }
+  .todo li {
+    flex: 1;
   }
   
-  .logo-text a,
-  .cta {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5em;
-    font-weight: 500;
+  .trash-btn,
+  .complete-btn {
+    background: #7260ef;
     color: white;
-    text-decoration: none;
-  }
-  
-  .cta {
-    padding: 9px 25px;
-    background-color: white;
     border: none;
-    border-radius: 50px;
+    padding: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease 0s;
-    color:black
+    font-size: 1rem;
+  }
+  .complete-btn {
+    background: rgb(11, 212, 162);
+  }
+  .todo-item {
+    padding: 0rem 0.5rem;
   }
   
-  .cta:hover {
-    background-color: #f8b3e8;
+  .fa-trash,
+  .fa-check {
+    pointer-events: none;
   }
   
-  .cards {
-    display: table;
+  .fall {
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
   }
   
-  .card {
-    font-family: "Candara", sans-serif;
-    width: 340px;
-    overflow: hidden;
-    background: #b96cde;
-    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.8);
-    display: inline-block;
-    flex-direction: column;
-    border-radius: 4rem;
-    margin: 2rem;
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
   }
   
-  .card-image img {
-    width: 100%;
-    height: 100px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    object-fit: cover;
+  /*CUSTOM SELECTOR */
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-image: none;
   }
   
-  .profile-image img {
-    z-index: 1;
-    width: 120px;
-    height: 120px;
+  /* Custom Select */
+  .select {
+    margin: 1rem;
     position: relative;
-    margin-top: -85px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 100px;
-    transition-duration: 0.4s;
-    transition-property: transform;
+    overflow: hidden;
   }
-  
-  .profile-image img:hover {
-    transform: scale(1.1);
+  select {
+    color: #7260ef;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    width: 12rem;
   }
-  
-  .card-content h3,
-  .card-content h2 {
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: 11px;
+  /* Arrow */
+  .select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background: #7260ef;
+    cursor: pointer;
+    pointer-events: none;
   }
+  /* Transition */
+  /*
+  .select:hover::after {
+    transform: scale(1.5);
+  }
+  */
